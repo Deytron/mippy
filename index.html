@@ -6,10 +6,56 @@
     <title>Mippy</title>
   </head>
   <body>
-    <h1 class="title is-1 has-text-centered mt-2">
-      Mippy : générer une phrase de passe
-    </h1>
-    <img src="xkcd.png" alt="Image XKCD mot de passe" />
+    <h2 class="subtitle is-1 has-text-centered mt-4">
+      Générer une phrase de passe
+    </h2>
+    <h1 class="title is-1 has-text-centered mt-4" id="password"></h1>
+    <div class="columns">
+      <div class="column is-3">
+        <label class="label">Format des lettres</label>
+        <div class="select">
+          <select id="letterFormat">
+            <option value="no">Minuscules</option>
+            <option value="up">Majuscule au début</option>
+            <option value="caps">Tout en majuscule</option>
+          </select>
+        </div>
+      </div>
+      <div class="column is-3">
+        <label class="label">Séparateur</label>
+        <div class="select">
+          <select id="separator">
+            <option value="none">Aucun</option>
+            <option value="minus">-</option>
+            <option value="plus">+</option>
+            <option value="underscore">_</option>
+            <option value="diese">#</option>
+            <option value="space">Espace</option>
+            <option value="dot">.</option>
+            <option value="dslash">/</option>
+          </select>
+        </div>
+      </div>
+      <div class="column is-3">
+        <label class="label">Chiffres présents</label>
+        <div class="buttons has-addons">
+          <button class="button is-danger" id="numberminus">-</button>
+          <button class="button" id="numbersnumber">1</button>
+          <button class="button is-info" id="numberplus">+</button>
+        </div>
+      </div>
+      <div class="column is-3">
+        <label class="label">Nombre de mots</label>
+        <div class="buttons has-addons">
+          <button class="button is-danger" id="wordminus">-</button>
+          <button class="button" id="wordsnumber">4</button>
+          <button class="button is-info" id="wordplus">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="column is-centered">
+      <img src="xkcd.png" alt="Image XKCD mot de passe" />
+    </div>
   </body>
   <script src="generator.js"></script>
 </html>
