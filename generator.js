@@ -100,11 +100,6 @@ function getWordlist(path) {
 
 // Function to generate the passphrase
 function generatePassphrase() {
-  if (!wordList.length) {
-    console.error("Word list is empty, unable to generate passphrase.");
-    return;
-  }
-
   let passphrase = [];
 
   // Select random words from the list

@@ -9,8 +9,8 @@
     <h2 class="subtitle is-1 has-text-centered mt-4">
       Générer une phrase de passe
     </h2>
-    <h1 class="title is-1 has-text-centered mt-4" id="password"></h1>
-    <div class="columns">
+    <h1 class="title is-1 has-text-centered mt-5 mb-5" id="password"></h1>
+    <div class="columns mt-5">
       <div class="column is-3">
         <label class="label">Format des lettres</label>
         <div class="select">
@@ -26,13 +26,13 @@
         <div class="select">
           <select id="separator">
             <option value="none">Aucun</option>
-            <option value="minus">-</option>
-            <option value="plus">+</option>
-            <option value="underscore">_</option>
-            <option value="diese">#</option>
+            <option value="-">-</option>
+            <option value="+">+</option>
+            <option value="_">_</option>
+            <option value="#">#</option>
             <option value="space">Espace</option>
-            <option value="dot">.</option>
-            <option value="dslash">/</option>
+            <option value=".">.</option>
+            <option value="/">/</option>
           </select>
         </div>
       </div>
@@ -53,11 +53,25 @@
         </div>
       </div>
     </div>
-    <div class="columns is-centered">
-      <div class="column">
-        <img src="xkcd.png" alt="Image XKCD mot de passe" />
-      </div>
-    </div>
+    <p>
+      L'intérêt de ce générateur de phrase de passe (plutôt que des mots de
+      passe) est de renforcer la sécurité d'un compte tout en faisant en sorte
+      de pouvoir le mémoriser ou taper rapidement le mot de passe si nécessaire.
+    </p>
+    <br />
+    <p>
+      Les mots de passes générés ici répondent aux éxigences générales présentes
+      sur tous les sites : majuscules, minuscules, chiffres et caractères
+      spéciaux.
+    </p>
+    <br />
+    <p>
+      La petite bande-dessinée ci-dessous explique l'intérêt d'une phrase de
+      passe.
+    </p>
+    <figure class="image container mt-5">
+      <img src="xkcd.png" alt="Image XKCD mot de passe" />
+    </figure>
   </body>
   <script src="generator.js"></script>
 </html>
