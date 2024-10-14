@@ -11,8 +11,8 @@ getWordlist(wordListPath);
 // Function to initialize settings and apply event listeners
 function initializeSettings() {
   // Get settings from localStorage or set defaults
-  format = localStorage.getItem("format") || "no";
-  sep = localStorage.getItem("sep") || "minus";
+  format = localStorage.getItem("format") || "up";
+  sep = localStorage.getItem("sep") || "-";
   wordsnumber = parseInt(localStorage.getItem("wordsnumber") || "4", 10);
   numbersnumber = parseInt(localStorage.getItem("numbersnumber") || "1", 10);
 
