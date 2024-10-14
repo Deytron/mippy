@@ -1,6 +1,6 @@
 // Create vars
 const wordList = [];
-const wordListPath = "./diceware-fr-alt.txt";
+const wordListPath = "diceware-fr-alt.txt";
 
 let format, sep, numbersnumber, wordsnumber;
 
@@ -13,8 +13,8 @@ function initializeSettings() {
   // Get settings from localStorage or set defaults
   format = localStorage.getItem("format") || "no";
   sep = localStorage.getItem("sep") || "minus";
-  numbersnumber = parseInt(localStorage.getItem("numbersnumber") || "1", 10);
   wordsnumber = parseInt(localStorage.getItem("wordsnumber") || "4", 10);
+  numbersnumber = parseInt(localStorage.getItem("numbersnumber") || "1", 10);
 
   // Store defaults back to localStorage if not set
   localStorage.setItem("format", format);
@@ -92,15 +92,19 @@ function getWordlist(path) {
   fetch(path)
     .then((response) => response.text())
     .then((data) => {
-      // Split the word list into an array, trimming each word
       wordList.push(...data.split(/\r?\n/).map((word) => word.trim()));
-      generatePassphrase();
+      generatePassphrase(); // Call after the word list is loaded
     })
     .catch((error) => console.error("Error fetching word list:", error));
 }
 
 // Function to generate the passphrase
 function generatePassphrase() {
+  if (!wordList.length) {
+    console.error("Word list is empty, unable to generate passphrase.");
+    return;
+  }
+
   let passphrase = [];
 
   // Select random words from the list
