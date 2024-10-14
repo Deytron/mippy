@@ -101,7 +101,6 @@ function getWordlist(path) {
 // Function to generate the passphrase
 function generatePassphrase() {
   if (!wordList.length) {
-    console.error("Word list is empty, unable to generate passphrase.");
     return;
   }
 
@@ -113,13 +112,20 @@ function generatePassphrase() {
     passphrase.push(formatWord(word, format));
   }
 
-  // Add numbers to the passphrase
+  // Join words with the selected separator
+  let passphraseString = passphrase.join(sep);
+
+  // Generate random numbers and add them at the end without the separator
+  let numbers = "";
   for (let i = 0; i < numbersnumber; i++) {
-    passphrase.push(Math.floor(Math.random() * 10).toString());
+    numbers += Math.floor(Math.random() * 10).toString();
   }
 
-  // Join the passphrase with the selected separator
-  document.getElementById("password").innerText = passphrase.join(sep);
+  // Concatenate the words and numbers
+  passphraseString += numbers;
+
+  // Display the passphrase
+  document.getElementById("password").innerText = passphraseString;
 }
 
 // Function to format words based on selected format
