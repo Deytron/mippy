@@ -1,6 +1,6 @@
 // Create vars
 const wordList = [];
-const wordListPath = "diceware-fr-alt.txt";
+const wordListPath = "wordlist.txt";
 
 let format, sep, numbersnumber, wordsnumber;
 
